@@ -35,6 +35,11 @@ export async function sendInvoiceMail(invoice: Invoice, customer: Customer): Pro
     return;
   }
 
+  if (invoice.totalAmount === 0) {
+    log.debug('Skipping sending mail for 0 amount invoice', { invoiceId: invoice._id });
+    return;
+  }
+
   const template = getTemplate(customer, 'newInvoice');
 
   const subject = template.subject({
