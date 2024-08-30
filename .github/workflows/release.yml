@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23'
+          node-version: '22'
 
       - name: Cache pnpm modules
         uses: actions/cache@v2
@@ -95,7 +95,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Cache pnpm modules
